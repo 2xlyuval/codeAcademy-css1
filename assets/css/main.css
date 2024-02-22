@@ -56,6 +56,70 @@ ul.clean-list li a {
     background: #86868687;
     width: 100%;
     height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    width: fit-content;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0px 0px 3px 1px #a2a0a0;
+}
+
+.modal .close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal .close-modal-btn:hover {
+    opacity: 0.5;
+}
+
+.modal form label {
+    display: block;
+    color: #606060;
+}
+
+input#email {
+    margin-top: 6px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(194, 194, 194, 1);
+}
+
+input#email:focus-visible {
+    outline: none;
+    border: 2px solid var(--primary);
+}
+
+.modal .submit-btn {
+    display: block;
+    border: 2px solid rgba(194, 194, 194, 1);
+    font-size: 16px;
+    color: #C2C2C2;
+    padding: 12px 25px;
+    background: white;
+    border-radius: 99px;
+    cursor: pointer;
+    margin-top: 44px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.modal .submit-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 /* MAIN LAYOUT */
@@ -352,6 +416,19 @@ section.card {
 
     .main-layout header {
         height: 70px;
+    }
+
+    .modal-wrapper {
+        top: 70px;
+        display: block;
+    }
+
+    .modal {
+        width: auto;
+        height: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .cards-container {

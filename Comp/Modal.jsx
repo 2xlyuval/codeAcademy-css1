@@ -1,12 +1,14 @@
-export function Modal({ setShowModal }) {
+export function Modal({ toggleModal }) {
   function onSubmit(e) {
     e.preventDefault();
-    setShowModal(false);
+    toggleModal(false);
   }
   return (
     <div className="modal-wrapper">
       <div className="modal">
-        <button onClick={() => setShowModal(false)}>&#x2715;</button>
+        <button className="close-modal-btn" onClick={() => toggleModal(false)}>
+          &#x2715;
+        </button>
         <h3>Join us to get access to the latest stories!</h3>
         <form>
           <label htmlFor="email">Your Email Address</label>
@@ -16,7 +18,9 @@ export function Modal({ setShowModal }) {
             name="email"
             placeholder="email@address.com"
           />
-          <button onClick={(e) => onSubmit(e)}>Submit</button>
+          <button className="submit-btn" onClick={(e) => onSubmit(e)}>
+            Submit
+          </button>
         </form>
       </div>
     </div>

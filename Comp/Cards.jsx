@@ -1,4 +1,4 @@
-export function Cards({ setShowModal }) {
+export function Cards({ toggleModal }) {
   const cards = [
     {
       imgSrc: "./assets/img/card1-img.png",
@@ -33,14 +33,14 @@ export function Cards({ setShowModal }) {
           imgSrc={card.imgSrc}
           title={card.title}
           description={card.description}
-          setShowModal={setShowModal}
+          toggleModal={toggleModal}
         />
       ))}
     </section>
   );
 }
 
-function Card({ imgSrc, title, description, setShowModal }) {
+function Card({ imgSrc, title, description, toggleModal }) {
   return (
     <section className="card">
       <img src={imgSrc} alt={title} />
@@ -50,7 +50,7 @@ function Card({ imgSrc, title, description, setShowModal }) {
           <p key={idx}>{text}</p>
         ))}
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() => toggleModal(true)}
           className="continue-reading-btn"
         >
           Continue Reading <span>&#x2192;</span>

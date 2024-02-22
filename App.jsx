@@ -6,14 +6,17 @@ import { Footer } from "./Comp/Footer.jsx";
 const { useState } = React;
 
 export function App() {
-  const [showModal, setShowModal] = useState(true);
-
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = (state) => {
+    setShowModal(state);
+    document.body.style.overflow = showModal ? "auto" : "hidden";
+  };
   return (
     <section className="main-layout">
       <Header />
-      {showModal && <Modal setShowModal={setShowModal} />}
+      {showModal && <Modal toggleModal={toggleModal} />}
       <main>
-        <Cards setShowModal={setShowModal} />
+        <Cards toggleModal={toggleModal} />
         <PageNavigation />
       </main>
       <Footer />
