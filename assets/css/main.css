@@ -537,6 +537,7 @@ section.card {
         display: none;
     }
 
+    /* sun menu */
     li.navbar-item.parent-item input:checked~ul.sub-list {
         display: block;
         width: 100%;
